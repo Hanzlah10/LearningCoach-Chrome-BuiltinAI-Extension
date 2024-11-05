@@ -1,25 +1,41 @@
+
+
+
+
 {
-    "manifest_version": 3,
-    "name": "Personalized Learning Coach",
-    "version": "1.0",
-    "description": "AI-powered learning assistant for students",
-    "permissions": [
-      "activeTab",
-      "storage",
-      "scripting",
-      "declarativeNetRequest" 
-    ],
-    "action": {
-      "default_popup": "index.html"
-    },
-    "background": {
-      "service_worker": "background.js",
-      "type": "module"
-    },
-    "content_scripts": [
-      {
-        "matches": ["<all_urls>"],
-        "js": ["content.js"]
-      }
-    ]
-  }
+  "manifest_version": 3,
+  "name": "Personalized Learning Coach",
+  "version": "1.0",
+  "description": "AI-powered learning assistant for students",
+  "permissions": [
+    "activeTab",
+    "storage",
+    "scripting"
+  ],
+  "icons": {
+    "16": "joke.png",
+    "32": "joke.png",
+    "48": "joke.png",
+    "128": "joke.png"
+  },
+  "optional_permissions": [],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ]
+}
+  
+

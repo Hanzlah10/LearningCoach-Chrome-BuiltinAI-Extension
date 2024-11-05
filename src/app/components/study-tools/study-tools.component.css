@@ -1,0 +1,18 @@
+.study-tools {
+    padding: 16px;
+  }
+  
+  .tool-section {
+    margin-bottom: 16px;
+  }
+  
+  .results {
+    margin-top: 16px;
+  }
+  
+  .processing {
+    color: red;
+    font-weight: bold;
+    margin-top: 8px;
+  }
+  

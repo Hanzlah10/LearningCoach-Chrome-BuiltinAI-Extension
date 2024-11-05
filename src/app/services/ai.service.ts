@@ -8,15 +8,17 @@ export class AIService {
   private session: any = null;
   private processingSubject = new BehaviorSubject<boolean>(false);
   processing$ = this.processingSubject.asObservable();
+  chrome: any;
+
   constructor() {
     this.initializeSession();
   }
 
   private async initializeSession() {
-    if (!chrome?.ai?.languageModel) {
+    if (!this.chrome?.ai?.languageModel) {
       throw new Error('Chrome AI API not available');
     }
-    this.session = await chrome.ai.languageModel.create({
+    this.session = await this.chrome.ai.languageModel.create({
       temperature: 0.7,
       topK: 40,
     });

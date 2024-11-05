@@ -1,1 +1,24 @@
-<p>study-tools works!</p>
+<div class="study-tools">
+    <div class="tool-section">
+        <h3>Text Tools</h3>
+        <button (click)="summarizeSelectedText()">Summarize Selection</button>
+        <button (click)="simplifyText('basic')">Simplify Text</button>
+        <button (click)="simplifyText('technical')">Technical Breakdown</button>
+    </div>
+
+    <div class="tool-section">
+        <h3>Quiz Generator</h3>
+        <button (click)="generateQuiz('multiple')">Multiple Choice</button>
+        <button (click)="generateQuiz('fillblank')">Fill in Blanks</button>
+        <button (click)="generateQuiz('truefalse')">True/False</button>
+    </div>
+
+    <div class="results" *ngIf="result">
+        <h4>Results:</h4>
+        <div [innerHTML]="result"></div>
+    </div>
+
+    <div class="processing" *ngIf="processing$ | async">
+        Processing...
+    </div>
+</div>
